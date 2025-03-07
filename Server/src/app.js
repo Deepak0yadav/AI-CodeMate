@@ -2,9 +2,16 @@ require('dotenv').config()
 const express =require('express')
 const app=express()
 const airoutes=require('./routes/ai.routes')
-const cors=require('cors')
 app.use(express.json())
-app.use(cors())
+
+const cors = require("cors");
+
+app.use(cors({
+      origin: process.env.FRONTEND_URL || "*",
+      methods: ["GET", "POST"],
+      credentials: true
+}));
+
 app.get('/',(req,res)=>{
       res.send('hi there')
 })
