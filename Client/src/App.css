@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: calc(100% - 5rem);
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 1rem;
+  overflow: auto;
+  
+}
+
+main .left {
+  background-color: rgb(5, 5, 5);
+  position: relative;
+
+}
+
+.left .code pre {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  background-color: rgb(5, 5, 5);
+
+}
+
+main .right {
+  background-color: rgb(55, 54, 54);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color: rgb(211, 204, 204);
+}
+
+/* Review button stays in view */
+.review {
+  color: rgb(255, 255, 255);
+  background-color: rgb(55, 28, 165);
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  bottom: 6px;
+  left: 43%;
+  font-weight: bold;
+}
+
+.review:hover {
+  transition: background-color 0.3s ease;
+  background-color: rgb(86, 56, 204);
+}
+
+textarea {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+.header{
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap: 0.8rem;
+}
+.header img{
+  width: 50px;
+  height: auto;
+  border-radius: 50px;
+  opacity:85%;
+  transform: translateY(-10px);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+.header .heading {
+  font-size: 1.5rem;
+  color: rgb(235, 229, 229);
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.placeholder {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: rgb(150, 150, 150);
+  font-size: 1rem;
+  font-family: "Fira Code", monospace;
+  pointer-events: none;
+  
+}
