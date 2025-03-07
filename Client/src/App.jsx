@@ -13,15 +13,12 @@ function App() {
     prism.highlightAll();
   }, []);
 
-  const [code, setCode] = useState('');
+  const [code, setCode] = useState("");
   const [review, setReview] = useState(``);
-
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
   async function codereview(code) {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/ai/get-review",
-        { code }
-      );
+      const response = await axios.post(`${API_BASE_URL}/ai/get-review`, { code });
       setReview(response.data);
     } catch (error) {
       console.error("Error in code review:", error);
