@@ -15,7 +15,8 @@ function App() {
 
   const [code, setCode] = useState("");
   const [review, setReview] = useState(``);
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+
   async function codereview(code) {
     try {
       const response = await axios.post(`${API_BASE_URL}/ai/get-review`, { code });
